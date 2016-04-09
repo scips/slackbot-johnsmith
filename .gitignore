@@ -1,0 +1,4 @@
+#local config should be out of source control
+config.js
+# node modules
+/node_modules/

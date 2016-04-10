@@ -2,15 +2,15 @@ var Infrastructure = function Infrastructure (){
     this.sites = {};
 };
 
-Infrastructure.prototype.update = function infrastructureUpdate(site, env, branch, hash) {
+Infrastructure.prototype.update = function infrastructureUpdate(site, env, branch, hash, who) {
   if(!this.sites[site]) {
     this.sites[site] = {
-      itt: {branch: null, hash: null},
-      uat: {branch: null, hash: null},
-      prd: {branch: null, hash: null}
+      itt: {branch: null, hash: null, who: null},
+      uat: {branch: null, hash: null, who: null},
+      prd: {branch: null, hash: null, who: null}
     };
   }
-  this.sites[site][env] = {branch: branch, hash: hash};
+  this.sites[site][env] = {branch: branch, hash: hash, who: who};
 };
 
 Infrastructure.prototype.get = function infrastructureGet(site) {
